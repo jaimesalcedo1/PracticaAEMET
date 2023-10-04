@@ -106,10 +106,10 @@ public class AemetRepositoryImpl implements AemetRepository{
 
             var res = pstm.executeUpdate();
             if (res > 0) {
-                logger.debug("medicion actualizada");
+                logger.debug("medición actualizada");
             } else {
-                logger.error("medicion no actualizada al no encontrarse en la base de datos con ese id");
-                throw new AemetNoEncotradoException("funko no encontrado");
+                logger.error("medición no actualizada al no encontrarse en la base de datos con id" + aemet.getCod());
+                throw new AemetNoEncotradoException("medición no encontrada");
             }
         }
         return aemet;
@@ -172,7 +172,7 @@ public class AemetRepositoryImpl implements AemetRepository{
 
     @Override
     public boolean deleteById(Long id) throws SQLException {
-        logger.debug("Borrando el funko con id: " + id);
+        logger.debug("Borrando la medición con id: " + id);
         String query = "DELETE FROM MEDICIONES WHERE ID =?";
         try (var connection = dbm.getConnection();
              var pstm = connection.prepareStatement(query)
@@ -185,7 +185,7 @@ public class AemetRepositoryImpl implements AemetRepository{
 
     @Override
     public void deleteAll() throws SQLException {
-        logger.debug("Borrando todos los funkos");
+        logger.debug("Borrando todos las mediciones");
         String query = "DELETE FROM MEDICIONES";
         try (var connection = dbm.getConnection();
              var pstm = connection.prepareStatement(query)
