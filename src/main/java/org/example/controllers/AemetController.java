@@ -39,29 +39,29 @@ public class AemetController {
         System.out.println("\n--- DIA 29 ---");
         var max29 = listaAemet.stream()
                 .filter(x -> x.getDia() == 29)
-                .max(comparingDouble(Aemet::getTempMaxima))
+                .max(Comparator.comparingDouble(Aemet::getTempMaxima))
                 .map(Aemet::getLocalidad).orElse("");
         var min29 = listaAemet.stream()
                 .filter(x -> x.getDia() == 29)
-                .min(comparingDouble(Aemet::getTempMinima))
+                .min(Comparator.comparingDouble(Aemet::getTempMinima))
                 .map(Aemet::getLocalidad).orElse("");
         System.out.println("Temperatura maxima: " + max29 + "\nTemperatura minima: " + min29);
 
         System.out.println("\n--- DIA 30 ---");
         var max30 = listaAemet.stream()
                 .filter(x -> x.getDia() == 30)
-                .max(comparingDouble(Aemet::getTempMaxima))
+                .max(Comparator.comparingDouble(Aemet::getTempMaxima))
                 .map(Aemet::getLocalidad).orElse("");
         var min30 = listaAemet.stream()
                 .filter(x -> x.getDia() == 30)
-                .min(comparingDouble(Aemet::getTempMinima))
+                .min(Comparator.comparingDouble(Aemet::getTempMinima))
                 .map(Aemet::getLocalidad).orElse("");
         System.out.println("Temperatura maxima: " + max30 + "\nTemperatura minima: " + min30);
 
         System.out.println("\n--- DIA 31 ---");
         var max31 = listaAemet.stream()
                 .filter(x -> x.getDia() == 30)
-                .max(comparingDouble(Aemet::getTempMaxima))
+                .max(Comparator.comparingDouble(Aemet::getTempMaxima))
                 .map(Aemet::getLocalidad).orElse("");
         var min31 = listaAemet.stream()
                 .filter(x -> x.getDia() == 31)
@@ -153,11 +153,98 @@ public class AemetController {
                 .map(Aemet::getLocalidad).orElse("");
         System.out.println(masLluvia);
 
+        //cambiar provincia para mostrar otros datos
         datosProvincia("Madrid");
 
     }
 
     public void datosProvincia(String provincia){
+        System.out.println("\n--- DATOS DE LA PROVINCIA DE " + provincia.toUpperCase() + " ---");
+        System.out.println("\n--- Temperatura maxima, minima y donde ha sido por dia ---");
+        Map<Integer, Map.Entry<String, Double>> temperaturaMaximaPorDiaYLocalidad = listaAemet.stream()
+                .filter(x -> x.getProvincia().equals(provincia))
+                .collect(groupingBy(
+                        Aemet::getDia,
+                        Collectors.collectingAndThen(
+                                Collectors.maxBy(comparingDouble(Aemet::getTempMaxima)),
+                                maxTemperatura -> maxTemperatura.map(max -> new AbstractMap.SimpleEntry<>(max.getLocalidad(), max.getTempMaxima())).orElse(null)
+                        )
+                ));
+        temperaturaMaximaPorDiaYLocalidad.forEach((dia, localidadYMaxTemperatura) -> {
+            System.out.println("Dia: " + dia);
+            System.out.println("Localidad con mayor temperatura: " + localidadYMaxTemperatura.getKey());
+            System.out.println("Temperatura maxima: " + localidadYMaxTemperatura.getValue());
+            System.out.println("");
+        });
+
+        Map<Integer, Map.Entry<String, Double>> temperaturaMinimaPorDiaYLocalidad = listaAemet.stream()
+                .filter(x -> x.getProvincia().equals(provincia))
+                .collect(groupingBy(
+                        Aemet::getDia,
+                        Collectors.collectingAndThen(
+                                Collectors.minBy(comparingDouble(Aemet::getTempMinima)),
+                                minTemperatura -> minTemperatura.map(min -> new AbstractMap.SimpleEntry<>(min.getLocalidad(), min.getTempMinima())).orElse(null)
+                        )
+                ));
+        temperaturaMinimaPorDiaYLocalidad.forEach((dia, localidadYMinTemperatura) -> {
+            System.out.println("Dia: " + dia);
+            System.out.println("Localidad con menor temperatura: " + localidadYMinTemperatura.getKey());
+            System.out.println("Temperatura minima: " + localidadYMinTemperatura.getValue());
+            System.out.println("");
+        });
+
+        System.out.println("\n--- Temperatura media maxima ---");
+        Map<Integer, Double> temperaturaMediaMaximaPorDia = listaAemet.stream()
+                .filter(x -> x.getProvincia().equals(provincia))
+                .collect(groupingBy(
+                        Aemet::getDia, averagingDouble(Aemet::getTempMaxima))
+                        );
+        temperaturaMediaMaximaPorDia.forEach((dia, tempMediaMax) -> {
+            System.out.println("Dia: " + dia);
+            System.out.println("Temperatura media maxima: " + tempMediaMax);
+            System.out.println("");
+        });
+
+        System.out.println("\n--- Temperatura media minima ---");
+        Map<Integer, Double> temperaturaMediaMinimaPorDia = listaAemet.stream()
+                .filter(x -> x.getProvincia().equals(provincia))
+                .collect(groupingBy(
+                        Aemet::getDia, averagingDouble(Aemet::getTempMinima))
+                );
+        temperaturaMediaMinimaPorDia.forEach((dia, tempMediaMin) -> {
+            System.out.println("Dia: " + dia);
+            System.out.println("Temperatura media minima: " + tempMediaMin);
+            System.out.println("");
+        });
+
+        System.out.println("\n--- Precipitación maxima y donde ha sido ---");
+        Map<Integer, Map.Entry<String, Double>> precipitacionMaximaPorDiaYLocalidad = listaAemet.stream()
+                .filter(x -> x.getProvincia().equals(provincia))
+                .collect(groupingBy(
+                        Aemet::getDia,
+                        Collectors.collectingAndThen(
+                                Collectors.maxBy(comparingDouble(Aemet::getPrecipitacion)),
+                                maxPrecipitacion -> maxPrecipitacion.map(max -> new AbstractMap.SimpleEntry<>(max.getLocalidad(), max.getPrecipitacion())).orElse(null)
+                        )
+                ));
+        precipitacionMaximaPorDiaYLocalidad.forEach((dia, localidadYMaxPrecip) -> {
+            System.out.println("Dia: " + dia);
+            System.out.println("Localidad con mayor temperatura: " + localidadYMaxPrecip.getKey());
+            System.out.println("Temperatura maxima: " + localidadYMaxPrecip.getValue());
+            System.out.println("");
+        });
+
+        System.out.println("\n--- Precipitacion media ---");
+        Map<Integer, Double> precipitacionMediaPorDia = listaAemet.stream()
+                .filter(x -> x.getProvincia().equals(provincia))
+                .collect(groupingBy(
+                        Aemet::getDia, averagingDouble(Aemet::getPrecipitacion))
+                );
+        precipitacionMediaPorDia.forEach((dia, precipMedia) -> {
+            System.out.println("Dia: " + dia);
+            System.out.println("Precipitacion media: " + precipMedia);
+            System.out.println("");
+        });
 
     }
 
