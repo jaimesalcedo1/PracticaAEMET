@@ -4,7 +4,7 @@ A Coruña;A Coruña;19.7 ;13:40;14.0 ;13:40;0
 A Coruña Aeropuerto;A Coruña;21.7 ;16:00;8.5 ;16:00;0
 Carballo, Depuradora;A Coruña;20.5 ;15:20;5.3 ;15:20;0
 Vimianzo;A Coruña;21.4 ;13:40;12.1 ;13:40;0
-Fisterra;A Coruña;23.7 ;1:20;15.3 ;1:20;0
+Fisterra;A Coruña;23.7 ;01:20;15.3 ;01:20;0
 Mazaricos;A Coruña;23.6 ;14:10;11.9 ;14:10;0
 Sobrado;A Coruña;22.6 ;16:30;11.2 ;16:30;0
 Santiago de Compostela Aeropuerto;A Coruña;23.8 ;16:30;11.6 ;16:30;0
@@ -360,7 +360,7 @@ Santanyí;Illes Balears;22.5 ;13:20;14.0 ;13:20;0
 Portocolom;Illes Balears;22.3 ;13:20;15.1 ;13:20;0
 Son Servera;Illes Balears;21.6 ;12:40;12.9 ;12:40;0
 Artà;Illes Balears;20.7 ;13:10;12.4 ;13:10;0
-Artà-Colònia de Sant Pere;Illes Balears;20.6 ;1:10;15.5 ;1:10;0.8
+Artà-Colònia de Sant Pere;Illes Balears;20.6 ;01:10;15.5 ;01:10;0.8
 Muro, S'Albufera;Illes Balears;21.1 ;12:20;13.4 ;12:20;0.2
 Manacor;Illes Balears;21.7 ;13:40;11.9 ;13:40;0.1
 Sineu;Illes Balears;21.0 ;12:30;12.5 ;12:30;0
@@ -370,9 +370,9 @@ Escorca, Son Torrella;Illes Balears;15.8 ;15:40;9.1 ;15:40;0
 Sa Pobla;Illes Balears;22.2 ;12:30;12.7 ;12:30;0
 Pollença;Illes Balears;22.1 ;11:30;12.8 ;11:30;0
 Port de Pollença;Illes Balears;22.3 ;12:00;13.5 ;12:00;0
-Es Mercadal;Illes Balears;20.4 ;0:10;15.6 ;0:10;0
+Es Mercadal;Illes Balears;20.4 ;00:10;15.6 ;00:10;0
 Ciutadella;Illes Balears;21.1 ;14:30;15.3 ;14:30;0
-Ciutadella, Cala Galdana;Illes Balears;20.9 ;0:00;11.5 ;0:00;0
+Ciutadella, Cala Galdana;Illes Balears;20.9 ;00:00;11.5 ;00:00;0
 Menorca, Aeropuerto;Illes Balears;20.9 ;15:10;13.9 ;15:10;0
 Sant Joan de Labritja;Illes Balears;22.0 ;14:40;12.1 ;14:40;0
 Ibiza, Aeropuerto;Illes Balears;21.9 ;13:50;14.7 ;13:50;0
@@ -386,7 +386,7 @@ Jaén;Jaén;26.5 ;16:20;15.0 ;16:20;0
 Linares;Jaén;26.8 ;15:50;15.2 ;15:50;0
 Bailén;Jaén;28.8 ;15:20;11.9 ;15:20;0.8
 Alcalá La Real;Jaén;26.3 ;13:40;12.6 ;13:40;0.2
-Valdezcaray, estación de esquí;La Rioja;7.9 ;2:10;3.0 ;2:10;0
+Valdezcaray, estación de esquí;La Rioja;7.9 ;02:10;3.0 ;02:10;0
 Haro;La Rioja;17.8 ;15:50;10.2 ;15:50;0
 Anguiano;La Rioja;13.6 ;15:00;6.2 ;15:00;0
 Nájera;La Rioja;17.7 ;16:10;9.6 ;16:10;0
@@ -394,7 +394,7 @@ Cenicero;La Rioja;18.2 ;16:10;11.3 ;16:10;0
 Enciso;La Rioja;15.6 ;15:50;7.4 ;15:50;0
 Alfaro;La Rioja;19.6 ;14:10;12.0 ;14:10;0.8
 Tías;Las Palmas;28.4 ;14:00;18.7 ;14:00;0.3
-Yaiza Playa Blanca;Las Palmas;27.7 ;0:20;21.0 ;0:20;0
+Yaiza Playa Blanca;Las Palmas;27.7 ;00:20;21.0 ;00:20;0
 Lanzarote Aeropuerto;Las Palmas;28.8 ;13:50;18.9 ;13:50;0.2
 Haría;Las Palmas;27.5 ;14:00;18.1 ;14:00;0
 Tinajo;Las Palmas;30.2 ;15:40;19.1 ;15:40;0
@@ -402,7 +402,7 @@ Pájara;Las Palmas;30.5 ;13:10;24.0 ;13:10;0
 Tuineje,Puerto Gran Tarajal;Las Palmas;29.3 ;15:50;22.8 ;15:50;0
 Fuerteventura Aeropuerto;Las Palmas;26.7 ;14:20;21.4 ;14:20;0
 La Oliva;Las Palmas;28.1 ;15:10;19.6 ;15:10;0
-La Oliva, Puerto de Corralejo;Las Palmas;25.1 ;0:10;21.7 ;0:10;0
+La Oliva, Puerto de Corralejo;Las Palmas;25.1 ;00:10;21.7 ;00:10;0
 Vega de San Mateo;Las Palmas;21.2 ;14:10;13.4 ;14:10;0
 Tejeda, Cruz de Tejeda;Las Palmas;22.6 ;15:00;15.3 ;15:00;0
 Agaete;Las Palmas;29.0 ;15:00;23.5 ;15:00;0
@@ -412,7 +412,7 @@ San Bartolome Tirajana, Lomo Pedro Alfonso;Las Palmas;27.6 ;14:40;21.0 ;14:40;0
 La Aldea de San Nicolás, Tasarte;Las Palmas;30.4 ;12:20;22.2 ;12:20;0
 Mogán, Puerto Rico;Las Palmas;30.6 ;12:20;22.4 ;12:20;0
 San Bartolome Tirajana, Las Tirajanas;Las Palmas;26.0 ;14:10;17.8 ;14:10;0
-Maspalomas, C. Insular Turismo;Las Palmas;29.6 ;0:20;22.3 ;0:20;0
+Maspalomas, C. Insular Turismo;Las Palmas;29.6 ;00:20;22.3 ;00:20;0
 San Bartolome Tirajana, El Matorral;Las Palmas;28.5 ;14:30;23.0 ;14:30;0
 Agüimes;Las Palmas;28.8 ;15:00;22.6 ;15:00;0
 Telde, Centro Forestal Doramas;Las Palmas;27.7 ;12:50;21.0 ;12:50;0
@@ -424,7 +424,7 @@ Las Palmas de Gran Canaria, San Cristobal;Las Palmas;30.5 ;13:10;21.3 ;13:10;0
 Las Palmas de Gran Canaria, Pl. de la Feria;Las Palmas;28.7 ;12:50;22.4 ;12:50;0
 Valleseco;Las Palmas;27.2 ;14:00;17.8 ;14:00;0
 Arucas;Las Palmas;30.4 ;15:00;21.8 ;15:00;0
-Maspalomas;Las Palmas;29.1 ;0:20;20.6 ;0:20;0
+Maspalomas;Las Palmas;29.1 ;00:20;20.6 ;00:20;0
 Teguise;Las Palmas;28.2 ;11:20;20.6 ;11:20;0
 Posada de Valdeón, Soto;León;15.5 ;15:50;4.9 ;15:50;0
 Villablino;León;26.0 ;15:20;3.4 ;15:20;0
@@ -481,7 +481,7 @@ Madrid, Ciudad Universitaria;Madrid;23.6 ;16:20;6.8 ;16:20;0
 Pozuelo de Alarcón;Madrid;24.4 ;17:30;5.2 ;17:30;0
 Madrid, Retiro;Madrid;22.2 ;15:50;12.3 ;15:50;0
 Tielmes;Madrid;23.1 ;15:50;11.8 ;15:50;0
-Puerto Alto del León;Madrid;14.5 ;0:10;4.2 ;0:10;0
+Puerto Alto del León;Madrid;14.5 ;00:10;4.2 ;00:10;0
 Alpedrete;Madrid;24.5 ;14:50;10.6 ;14:50;0
 Rozas de Puerto Real;Madrid;22.5 ;17:30;12.6 ;17:30;0
 Robledo de Chavela;Madrid;23.4 ;16:30;8.7 ;16:30;0
@@ -536,7 +536,7 @@ Areso;Navarra;14.3 ;16:10;9.5 ;16:10;0
 Los Arcos;Navarra;19.4 ;16:00;9.3 ;16:00;0
 Isaba/Izaba;Navarra;16.0 ;12:50;8.5 ;12:50;0
 Oroz-Betelu/Orotz-Betelu;Navarra;13.7 ;14:30;10.3 ;14:30;0
-Roncesvalles;Navarra;9.9 ;0:00;6.8 ;0:00;0
+Roncesvalles;Navarra;9.9 ;00:00;6.8 ;00:00;0
 Navascués/Nabaskoze;Navarra;18.9 ;15:10;5.2 ;15:10;0
 Cáseda;Navarra;18.2 ;13:40;11.9 ;13:40;0
 Olite/Erriberri;Navarra;17.2 ;16:10;11.7 ;16:10;0
