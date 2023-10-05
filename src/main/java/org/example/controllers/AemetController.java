@@ -1,10 +1,18 @@
 package org.example.controllers;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.example.database.DatabaseManager;
+import org.example.serializers.LocalTimeDeserializer;
 import org.example.models.Aemet;
 import org.example.repository.aemet.AemetRepositoryImpl;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -23,7 +31,7 @@ public class AemetController {
         aemetRepoImpl.llenarTablas();
         listaAemet = aemetRepoImpl.findAll();
         procesarStreams();
-        generateJSON();
+        generateJSON("Madrid");
     }
 
     public static AemetController getInstance() throws SQLException {
@@ -248,5 +256,20 @@ public class AemetController {
 
     }
 
-    public void generateJSON(){}
+    public void generateJSON(String provincia){
+
+        var datosJSON = listaAemet.stream().filter(x -> x.getProvincia().equals(provincia)).toList();
+        String file = Paths.get("").toAbsolutePath() + File.separator + "data" + File.separator + provincia.toLowerCase()+".json";
+
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.registerTypeAdapter(LocalTime.class, new LocalTimeDeserializer());
+        Gson gson = gsonBuilder.setPrettyPrinting().create();
+        try (FileWriter writer = new FileWriter(file)) {
+            gson.toJson(datosJSON, writer);
+            System.out.println("Datos exportados con éxito a " + file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -10,7 +10,8 @@ repositories {
 }
 
 dependencies {
-    implementation("com.google.code.gson:gson:2.7")
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.10.1")
     implementation("ch.qos.logback:logback-classic:1.4.11")
     // https://mvnrepository.com/artifact/org.mybatis/mybatis
     implementation("org.mybatis:mybatis:3.2.2")
